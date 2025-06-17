@@ -16,6 +16,51 @@ const About: React.FC = () => {
   ];
 
   return (
+    <>
+      {/* Custom Bolt.new Badge Styles */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          .bolt-badge {
+            transition: all 0.3s ease;
+          }
+          @keyframes badgeIntro {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+          }
+          .bolt-badge-intro {
+            animation: badgeIntro 1s ease-out 1s both;
+          }
+          .bolt-badge-intro.animated {
+            animation: none;
+          }
+          .bolt-badge:hover {
+            animation: bounce 0.6s ease-in-out;
+          }
+          @keyframes bounce {
+            0%, 20%, 60%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            80% { transform: translateY(-5px); }
+          }
+        `
+      }} />
+      
+      {/* Bolt.new Badge */}
+      <div className="fixed bottom-4 right-4 z-50">
+        <a 
+          href="https://bolt.new/" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="block transition-all duration-300 hover:shadow-2xl"
+        >
+          <img 
+            src="https://storage.bolt.army/white_circle_360x360.png" 
+            alt="Built with Bolt.new badge" 
+            className="w-24 h-24 md:w-32 md:h-32 rounded-full shadow-lg bolt-badge bolt-badge-intro"
+            onAnimationEnd={(e) => e.currentTarget.classList.add('animated')}
+          />
+        </a>
+      </div>
+
     <div className="pt-16">
       {/* Hero Section */}
       <section className="py-20">
@@ -169,6 +214,7 @@ const About: React.FC = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 
