@@ -27,16 +27,16 @@ const Contact: React.FC = () => {
       tech: ["React", "TypeScript", "Community Building"]
     },
     {
-      title: "Bolt Extension",
-      description: "Browser extension improving Bolt.new UX",
-      link: "",
-      tech: ["JavaScript", "WebExtensions", "UX Design"]
+      title: "UpVibe Dance",
+      description: "Interactive dance experience platform",
+      link: "https://upvibe.dance/",
+      tech: ["React", "Animation", "Interactive Design"]
     },
     {
-      title: "PRD Generator",
-      description: "Clean, accessible project requirement generator",
-      link: "",
-      tech: ["React", "AI Integration", "Developer Tools"]
+      title: "Bolt Hackathon Badge",
+      description: "Official hackathon requirement badge system",
+      link: "https://bolthackathonbadge.bolt.army/",
+      tech: ["React", "Badge System", "Community Tools"]
     }
   ];
 

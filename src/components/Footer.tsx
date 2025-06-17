@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Github, Twitter, Mail } from 'lucide-react';
+import { Zap, Twitter, Mail } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -25,6 +25,14 @@ const Footer: React.FC = () => {
                 className="text-gray-400 hover:text-cyber-blue transition-colors duration-300"
               >
                 <Mail className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://x.com/Imiel_Visser"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-cyber-blue transition-colors duration-300"
+              >
+                <Twitter className="w-5 h-5" />
               </a>
             </div>
           </div>
