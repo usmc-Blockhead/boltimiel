@@ -39,24 +39,29 @@ const Home: React.FC = () => {
           <div className="animate-slide-up">
             <div className="mb-12">
               {/* Terraced Text Layout */}
-              <div className="flex flex-col items-start max-w-4xl mx-auto">
+              <div className="flex flex-col items-start max-w-5xl mx-auto">
                 {/* BOLT. NEW line */}
-                <div className="w-full mb-4">
-                  <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-none">
-                    <span className="bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-green bg-clip-text text-transparent animate-glow-pulse block py-4">
+                <div className="w-full mb-2">
+                  <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-none">
+                    <span className="bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-green bg-clip-text text-transparent animate-glow-pulse block py-3 tracking-wider">
                       BOLT. NEW
                     </span>
                   </h1>
                 </div>
                 
                 {/* needs Imiel line - indented */}
-                <div className="w-full pl-8 md:pl-16 lg:pl-24">
-                  <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-none">
-                    <span className="bg-gradient-to-r from-cyber-green via-cyber-blue to-cyber-purple bg-clip-text text-transparent block py-4">
+                <div className="w-full pl-6 md:pl-12 lg:pl-20">
+                  <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-none">
+                    <span className="bg-gradient-to-r from-cyber-green via-cyber-pink to-cyber-blue bg-clip-text text-transparent block py-3 tracking-wide animate-glow-pulse" style={{ animationDelay: '1s' }}>
                       needs Imiel
                     </span>
-                  </h2>
+                  </h1>
                 </div>
+              </div>
+              
+              {/* Visual connector line */}
+              <div className="flex justify-center mb-8">
+                <div className="w-32 h-1 bg-gradient-to-r from-cyber-blue via-cyber-green to-cyber-purple rounded-full opacity-60"></div>
               </div>
             </div>
             
