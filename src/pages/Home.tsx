@@ -30,7 +30,52 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <div className="pt-16">
+    <>
+      {/* Custom Bolt.new Badge Styles */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          .bolt-badge {
+            transition: all 0.3s ease;
+          }
+          @keyframes badgeIntro {
+            0% { transform: translateX(-100px) rotate(-360deg); opacity: 0; }
+            100% { transform: translateX(0) rotate(0deg); opacity: 1; }
+          }
+          .bolt-badge-intro {
+            animation: badgeIntro 1s ease-out 1s both;
+          }
+          .bolt-badge-intro.animated {
+            animation: none;
+          }
+          @keyframes badgeHover {
+            0% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(22deg); }
+            100% { transform: scale(1) rotate(0deg); }
+          }
+          .bolt-badge:hover {
+            animation: badgeHover 0.6s ease-in-out;
+          }
+        `
+      }} />
+      
+      {/* Bolt.new Badge */}
+      <div className="fixed bottom-4 right-4 z-50">
+        <a 
+          href="https://bolt.new/" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="block transition-all duration-300 hover:shadow-2xl"
+        >
+          <img 
+            src="https://storage.bolt.army/white_circle_360x360.png" 
+            alt="Built with Bolt.new badge" 
+            className="w-24 h-24 md:w-32 md:h-32 rounded-full shadow-lg bolt-badge bolt-badge-intro"
+            onAnimationEnd={(e) => e.currentTarget.classList.add('animated')}
+          />
+        </a>
+      </div>
+
+      <div className="pt-16">
       {/* Hero Section */}
       <section className="relative min-h-[110vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-900/50 to-dark-900"></div>
@@ -199,7 +244,8 @@ const Home: React.FC = () => {
       {showEmailPreview && (
         <EmailPreview onClose={() => setShowEmailPreview(false)} />
       )}
-    </div>
+      </div>
+    </>
   );
 };
 
