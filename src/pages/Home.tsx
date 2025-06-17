@@ -32,16 +32,33 @@ const Home: React.FC = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative min-h-[120vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[110vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-900/50 to-dark-900"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-slide-up">
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8">
-              <span className="bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-green bg-clip-text text-transparent animate-glow-pulse">
-                Bolt.New Needs Imiel
-              </span>
-            </h1>
+            <div className="mb-12">
+              {/* Terraced Text Layout */}
+              <div className="flex flex-col items-start max-w-4xl mx-auto">
+                {/* BOLT. NEW line */}
+                <div className="w-full mb-4">
+                  <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-none">
+                    <span className="bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-green bg-clip-text text-transparent animate-glow-pulse block py-4">
+                      BOLT. NEW
+                    </span>
+                  </h1>
+                </div>
+                
+                {/* needs Imiel line - indented */}
+                <div className="w-full pl-8 md:pl-16 lg:pl-24">
+                  <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-none">
+                    <span className="bg-gradient-to-r from-cyber-green via-cyber-blue to-cyber-purple bg-clip-text text-transparent block py-4">
+                      needs Imiel
+                    </span>
+                  </h2>
+                </div>
+              </div>
+            </div>
             
             <p className="text-2xl md:text-3xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
               Someone who's already <span className="text-cyber-blue font-semibold">pushing the boundaries</span> of 
@@ -77,6 +94,11 @@ const Home: React.FC = () => {
         <div className="absolute top-20 left-10 w-20 h-20 bg-cyber-blue/10 rounded-full animate-float"></div>
         <div className="absolute bottom-32 right-10 w-16 h-16 bg-cyber-purple/10 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
         <div className="absolute top-1/2 left-1/4 w-12 h-12 bg-cyber-green/10 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-1/3 right-1/4 w-14 h-14 bg-cyber-pink/10 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-1/4 left-1/3 w-10 h-10 bg-cyber-yellow/10 rounded-full animate-float" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-3/4 right-1/3 w-18 h-18 bg-cyber-blue/8 rounded-full animate-float" style={{ animationDelay: '5s' }}></div>
+        <div className="absolute top-1/4 left-1/2 w-8 h-8 bg-cyber-green/12 rounded-full animate-float" style={{ animationDelay: '6s' }}></div>
+        <div className="absolute bottom-1/3 right-1/5 w-22 h-22 bg-cyber-purple/8 rounded-full animate-float" style={{ animationDelay: '7s' }}></div>
       </section>
 
       {/* Email Campaign Section */}
