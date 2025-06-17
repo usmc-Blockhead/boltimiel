@@ -114,7 +114,8 @@ Best,
             <button
               onClick={() => {
                 onClose();
-                document.getElementById('form')?.scrollIntoView({ behavior: 'smooth' });
+                // Navigate to home page with form anchor
+                window.location.href = '/#email-campaign-form';
               }}
               className="px-6 py-2 bg-gradient-to-r from-cyber-green to-cyber-blue text-white rounded-lg hover:from-cyber-blue hover:to-cyber-green transition-all duration-300 font-medium"
             >

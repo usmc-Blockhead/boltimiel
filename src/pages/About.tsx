@@ -205,7 +205,7 @@ const About: React.FC = () => {
               Help Bolt.New discover what they're missing.
             </p>
             <a 
-              href="/#form" 
+              href="/#email-campaign-form" 
               className="group bg-gradient-to-r from-cyber-green to-cyber-blue px-8 py-4 rounded-lg font-semibold text-white hover:from-cyber-blue hover:to-cyber-green transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyber-green/25 inline-block"
             >
               Send the Email

@@ -11,7 +11,24 @@ const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
 
   React.useEffect(() => {
-    window.scrollTo(0, 0);
+    // Check if there's a hash in the URL for anchor navigation
+    const hash = window.location.hash;
+    
+    if (hash) {
+      // Small delay to ensure the page has rendered
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+    } else {
+      // Normal scroll to top for regular navigation
+      window.scrollTo(0, 0);
+    }
   }, [pathname]);
 
   return null;

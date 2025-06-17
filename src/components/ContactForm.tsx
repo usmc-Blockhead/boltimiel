@@ -52,7 +52,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div id="email-campaign-form" className="max-w-2xl mx-auto">
       <div className="bg-dark-700/50 backdrop-blur-sm p-8 rounded-xl border border-cyber-blue/20">
         <div className="text-center mb-8">
           <h3 className="text-2xl font-bold text-white mb-2">
@@ -66,7 +66,7 @@ const ContactForm: React.FC = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label htmlFor="firstName" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="campaign-first-name" className="block text-sm font-medium text-gray-300 mb-2">
                 <div className="flex items-center space-x-2">
                   <User className="w-4 h-4 text-cyber-blue" />
                   <span>First Name</span>
@@ -74,7 +74,7 @@ const ContactForm: React.FC = () => {
               </label>
               <input
                 type="text"
-                id="firstName"
+                id="campaign-first-name"
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
@@ -85,7 +85,7 @@ const ContactForm: React.FC = () => {
             </div>
 
             <div>
-              <label htmlFor="lastName" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="campaign-last-name" className="block text-sm font-medium text-gray-300 mb-2">
                 <div className="flex items-center space-x-2">
                   <User className="w-4 h-4 text-cyber-blue" />
                   <span>Last Name</span>
@@ -93,7 +93,7 @@ const ContactForm: React.FC = () => {
               </label>
               <input
                 type="text"
-                id="lastName"
+                id="campaign-last-name"
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
@@ -105,7 +105,7 @@ const ContactForm: React.FC = () => {
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+            <label htmlFor="campaign-email" className="block text-sm font-medium text-gray-300 mb-2">
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-cyber-blue" />
                 <span>Email Address</span>
@@ -113,7 +113,7 @@ const ContactForm: React.FC = () => {
             </label>
             <input
               type="email"
-              id="email"
+              id="campaign-email"
               name="email"
               value={formData.email}
               onChange={handleChange}

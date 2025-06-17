@@ -226,7 +226,7 @@ const Contact: React.FC = () => {
                   <span>Send Hiring Email</span>
                 </a>
                 <a 
-                  href="/#form" 
+                  href="/#email-campaign-form" 
                   className="group border-2 border-cyber-green px-8 py-4 rounded-lg font-semibold text-cyber-green hover:bg-cyber-green hover:text-dark-900 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-2"
                 >
                   <MessageSquare className="w-5 h-5" />

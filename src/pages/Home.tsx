@@ -128,7 +128,7 @@ const Home: React.FC = () => {
               </button>
               
               <a 
-                href="#form" 
+                href="#email-campaign-form" 
                 className="group border-2 border-cyber-green px-10 py-5 rounded-lg font-semibold text-cyber-green hover:bg-cyber-green hover:text-dark-900 transition-all duration-300 transform hover:scale-105 text-lg"
               >
                 <span className="flex items-center space-x-2">
@@ -223,7 +223,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section id="form" className="py-20">
+      <section id="email-campaign-form" className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
