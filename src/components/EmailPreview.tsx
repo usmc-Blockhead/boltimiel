@@ -47,9 +47,9 @@ Best,
 
   return (
     <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-dark-800 border border-cyber-blue/30 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+      <div className="bg-dark-800 border border-cyber-blue/30 rounded-xl max-w-4xl w-full max-h-[90vh] flex flex-col">
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-cyber-blue/20">
+        <div className="flex items-center justify-between p-6 border-b border-cyber-blue/20 flex-shrink-0">
           <div className="flex items-center space-x-3">
             <div className="p-2 bg-gradient-to-r from-cyber-blue to-cyber-purple rounded-lg">
               <Mail className="w-5 h-5 text-white" />
@@ -79,7 +79,7 @@ Best,
         </div>
 
         {/* Email Content */}
-        <div className="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
+        <div className="flex-1 overflow-y-auto min-h-0 p-6 scrollbar-custom">
           <div className="bg-dark-700/50 backdrop-blur-sm p-6 rounded-lg border border-cyber-blue/10">
             <div className="font-mono text-sm space-y-4">
               <div className="border-b border-gray-600 pb-4">
@@ -103,7 +103,7 @@ Best,
         </div>
 
         {/* Footer */}
-        <div className="p-6 border-t border-cyber-blue/20 bg-dark-800/50">
+        <div className="p-6 border-t border-cyber-blue/20 bg-dark-800/50 flex-shrink-0">
           <div className="flex justify-end space-x-4">
             <button
               onClick={onClose}
