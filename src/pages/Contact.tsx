@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, MessageSquare, Github, Twitter, ExternalLink } from 'lucide-react';
+import { Mail, MessageSquare, ExternalLink } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const contactMethods = [
@@ -7,29 +7,15 @@ const Contact: React.FC = () => {
       icon: <Mail className="w-6 h-6" />,
       title: "Direct Email",
       description: "Reach out directly for hiring opportunities",
-      link: "mailto:imiel@example.com",
-      linkText: "imiel@example.com"
+      link: "mailto:imiel.visser@gmail.com",
+      linkText: "imiel.visser@gmail.com"
     },
     {
       icon: <MessageSquare className="w-6 h-6" />,
       title: "Discord",
-      description: "Find him in the Bolt community Discord",
-      link: "https://discord.gg/bolt",
+      description: "Find him in the StackBlitz community Discord",
+      link: "https://discord.gg/stackblitz",
       linkText: "Join Discord"
-    },
-    {
-      icon: <Github className="w-6 h-6" />,
-      title: "GitHub",
-      description: "Check out his code and contributions",
-      link: "https://github.com/imiel",
-      linkText: "View Profile"
-    },
-    {
-      icon: <Twitter className="w-6 h-6" />,
-      title: "Twitter",
-      description: "Follow his thoughts on web development",
-      link: "https://twitter.com/imiel",
-      linkText: "@imiel"
     }
   ];
 
@@ -43,13 +29,13 @@ const Contact: React.FC = () => {
     {
       title: "Bolt Extension",
       description: "Browser extension improving Bolt.new UX",
-      link: "#",
+      link: "",
       tech: ["JavaScript", "WebExtensions", "UX Design"]
     },
     {
       title: "PRD Generator",
       description: "Clean, accessible project requirement generator",
-      link: "#",
+      link: "",
       tech: ["React", "AI Integration", "Developer Tools"]
     }
   ];
@@ -155,15 +141,19 @@ const Contact: React.FC = () => {
                       </span>
                     ))}
                   </div>
-                  <a 
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 text-cyber-blue hover:text-cyber-green transition-colors duration-300 font-medium"
-                  >
-                    <span>View Project</span>
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
+                  {project.link ? (
+                    <a 
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center space-x-2 text-cyber-blue hover:text-cyber-green transition-colors duration-300 font-medium"
+                    >
+                      <span>View Project</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  ) : (
+                    <span className="text-gray-500 text-sm">Coming Soon</span>
+                  )}
                 </div>
               </div>
             ))}
@@ -185,7 +175,7 @@ const Contact: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="mailto:imiel@example.com?subject=Hiring Opportunity"
+                  href="mailto:imiel.visser@gmail.com?subject=Hiring Opportunity"
                   className="group bg-gradient-to-r from-cyber-purple to-cyber-blue px-8 py-4 rounded-lg font-semibold text-white hover:from-cyber-blue hover:to-cyber-purple transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyber-purple/25 inline-flex items-center space-x-2"
                 >
                   <Mail className="w-5 h-5" />

@@ -12,32 +12,16 @@ const Footer: React.FC = () => {
                 <Zap className="w-6 h-6 text-white" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-cyber-blue to-cyber-green bg-clip-text text-transparent">
-                Bolt Needs Imiel
+                Bolt.New Needs Imiel
               </span>
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
               A campaign to connect an exceptional engineer-designer who's already building 
-              the future of web development with the team at Bolt.
+              the future of web development with the team at Bolt.New.
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://github.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cyber-blue transition-colors duration-300"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cyber-blue transition-colors duration-300"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a 
-                href="mailto:contact@boltneedsimiel.com"
+                href="mailto:imiel.visser@gmail.com"
                 className="text-gray-400 hover:text-cyber-blue transition-colors duration-300"
               >
                 <Mail className="w-5 h-5" />
@@ -61,8 +45,8 @@ const Footer: React.FC = () => {
               Community
             </h3>
             <ul className="space-y-2">
-              <li><a href="https://bolt.army" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">Bolt Army</a></li>
-              <li><a href="https://discord.gg/bolt" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">Discord</a></li>
+              <li><a href="https://bolt.army" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">Bolt.New Army</a></li>
+              <li><a href="https://discord.gg/stackblitz" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">Discord</a></li>
               <li><a href="https://bolt.new" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">Bolt.new</a></li>
             </ul>
           </div>
@@ -70,7 +54,7 @@ const Footer: React.FC = () => {
         
         <div className="mt-8 pt-8 border-t border-gray-700">
           <p className="text-center text-gray-400 text-sm">
-            &copy; 2024 Bolt Needs Imiel. Made with ⚡ for the future of web development.
+            &copy; 2024 Bolt.New Needs Imiel. Made with ⚡ for the future of web development.
           </p>
         </div>
       </div>

@@ -14,7 +14,7 @@ Hi Eric Simons,
 
 I'm reaching out to introduce someone who's already pushing the boundaries of web development in ways that deeply align with StackBlitz's mission: Imiel.
 
-Imiel is a rare breed of engineer-designer hybrid with a deep understanding of front-end architecture, UX design, and the real-world pain points developers face, especially in browser-based dev environments like Bolt.new. Without any official access to the codebase, he's already done what many full teams haven't:
+Imiel is a rare breed of engineer-designer hybrid with a deep understanding of front-end architecture, UX design, and the real-world pain points developers face, especially in browser-based dev environments like Bolt.New. Without any official access to the codebase, he's already done what many full teams haven't:
 
 Created a popular extension that improves core UX:
 • Manual sidebar toggle to eliminate distracting UI behavior
@@ -22,7 +22,7 @@ Created a popular extension that improves core UX:
 • Smart analysis and rewriting of the bolt.ignore file based on project contents
 • A cleaner, more accessible PRD generator for real-world workflows
 
-Founded bolt.army to connect and empower devs building around Bolt, essentially creating an organic developer community from the ground up.
+Founded bolt.army to connect and empower devs building around Bolt.New, essentially creating an organic developer community from the ground up.
 
 He's already designing, engineering, and shipping the kind of user-centric improvements StackBlitz values, from the outside. With access to the actual platform and a team to collaborate with, he'd be an unstoppable force.
 
@@ -97,7 +97,7 @@ Best,
           <div className="mt-6 p-4 bg-cyber-blue/10 border border-cyber-blue/20 rounded-lg">
             <p className="text-sm text-gray-300">
               <strong className="text-cyber-blue">Note:</strong> When you fill out the form below, 
-              your name will automatically replace "[Your Name]" in the email that gets sent to Bolt.
+              your name will automatically replace "[Your Name]" in the email that gets sent to Bolt.New.
             </p>
           </div>
         </div>

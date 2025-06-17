@@ -42,13 +42,13 @@ const About: React.FC = () => {
               <p className="text-gray-300 mb-6 text-lg leading-relaxed">
                 Imiel represents something rare in our industry: an engineer-designer hybrid with an deep understanding 
                 of front-end architecture, UX design, and the real-world pain points developers face, especially in 
-                browser-based development environments like Bolt.new.
+                browser-based development environments like Bolt.New.
               </p>
               
               <p className="text-gray-300 mb-6 text-lg leading-relaxed">
                 What makes him exceptional isn't just his technical skill—it's his ability to identify problems before 
                 they're officially recognized and create solutions that developers actually want to use. Without any 
-                official access to the Bolt codebase, he's already built what many full teams haven't.
+                official access to the Bolt.New codebase, he's already built what many full teams haven't.
               </p>
               
               <h3 className="text-2xl font-bold text-cyber-green mb-4">Building Before Being Asked</h3>
@@ -61,7 +61,7 @@ const About: React.FC = () => {
               
               <p className="text-gray-300 mb-6 text-lg leading-relaxed">
                 But perhaps most importantly, he created bolt.army—an organic developer community that connects and 
-                empowers people building around Bolt. This wasn't assigned to him. He saw the need and built it.
+                empowers people building around Bolt.New. This wasn't assigned to him. He saw the need and built it.
               </p>
               
               <h3 className="text-2xl font-bold text-cyber-purple mb-4">The Natural Bridge</h3>
@@ -157,7 +157,7 @@ const About: React.FC = () => {
             </h2>
             <p className="text-gray-300 text-lg mb-8">
               Imiel isn't just ready for a role like this—he's already doing it. 
-              Help Bolt discover what they're missing.
+              Help Bolt.New discover what they're missing.
             </p>
             <a 
               href="/#form" 

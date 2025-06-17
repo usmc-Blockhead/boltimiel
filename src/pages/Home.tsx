@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Code, Users, Zap, Send, ChevronRight, Star } from 'lucide-react';
+import { Mail, Code, Users, Zap, Send, ChevronRight, Star, MessageSquare } from 'lucide-react';
 import EmailPreview from '../components/EmailPreview';
 import ContactForm from '../components/ContactForm';
 
@@ -32,26 +32,26 @@ const Home: React.FC = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[120vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-900/50 to-dark-900"></div>
         
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-slide-up">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8">
               <span className="bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-green bg-clip-text text-transparent animate-glow-pulse">
-                Bolt Needs Imiel
+                Bolt.New Needs Imiel
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-2xl md:text-3xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
               Someone who's already <span className="text-cyber-blue font-semibold">pushing the boundaries</span> of 
-              web development and <span className="text-cyber-green font-semibold">building the future</span> with Bolt
+              web development and <span className="text-cyber-green font-semibold">building the future</span> with Bolt.New
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <button
                 onClick={() => setShowEmailPreview(true)}
-                className="group bg-gradient-to-r from-cyber-blue to-cyber-purple px-8 py-4 rounded-lg font-semibold text-white hover:from-cyber-purple hover:to-cyber-blue transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyber-blue/25"
+                className="group bg-gradient-to-r from-cyber-blue to-cyber-purple px-10 py-5 rounded-lg font-semibold text-white hover:from-cyber-purple hover:to-cyber-blue transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyber-blue/25 text-lg"
               >
                 <span className="flex items-center space-x-2">
                   <Mail className="w-5 h-5" />
@@ -62,7 +62,7 @@ const Home: React.FC = () => {
               
               <a 
                 href="#form" 
-                className="group border-2 border-cyber-green px-8 py-4 rounded-lg font-semibold text-cyber-green hover:bg-cyber-green hover:text-dark-900 transition-all duration-300 transform hover:scale-105"
+                className="group border-2 border-cyber-green px-10 py-5 rounded-lg font-semibold text-cyber-green hover:bg-cyber-green hover:text-dark-900 transition-all duration-300 transform hover:scale-105 text-lg"
               >
                 <span className="flex items-center space-x-2">
                   <Send className="w-5 h-5" />
@@ -79,6 +79,38 @@ const Home: React.FC = () => {
         <div className="absolute top-1/2 left-1/4 w-12 h-12 bg-cyber-green/10 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
       </section>
 
+      {/* Email Campaign Section */}
+      <section className="py-16 bg-gradient-to-r from-cyber-blue/10 to-cyber-purple/10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-cyber-green to-cyber-blue bg-clip-text text-transparent">
+              Join the Email Campaign
+            </span>
+          </h2>
+          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+            Help us get Imiel noticed by the Bolt.New team. Send a professional email showcasing his contributions and potential impact.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <a 
+              href="https://discord.gg/stackblitz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-gradient-to-r from-cyber-purple to-cyber-blue px-8 py-4 rounded-lg font-semibold text-white hover:from-cyber-blue hover:to-cyber-purple transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyber-purple/25 inline-flex items-center space-x-2"
+            >
+              <MessageSquare className="w-5 h-5" />
+              <span>Join Discord</span>
+            </a>
+            <a 
+              href="mailto:imiel.visser@gmail.com"
+              className="group border-2 border-cyber-green px-8 py-4 rounded-lg font-semibold text-cyber-green hover:bg-cyber-green hover:text-dark-900 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-2"
+            >
+              <Mail className="w-5 h-5" />
+              <span>Email Imiel</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Achievements Section */}
       <section className="py-20 bg-dark-800/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -89,7 +121,7 @@ const Home: React.FC = () => {
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Without any official access to the codebase, Imiel has already done what many full teams haven't
+              Without any official access to the Bolt.New codebase, Imiel has already done what many full teams haven't
             </p>
           </div>
           
@@ -124,11 +156,11 @@ const Home: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-cyber-green to-cyber-blue bg-clip-text text-transparent">
-                Help Bolt Discover Imiel
+                Help Bolt.New Discover Imiel
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Join the campaign and send an email to Bolt showcasing why they need Imiel on their team
+              Join the campaign and send an email to Bolt.New showcasing why they need Imiel on their team
             </p>
           </div>
           

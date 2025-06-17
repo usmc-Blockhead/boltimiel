@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
               <Zap className="w-6 h-6 text-white" />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-cyber-blue to-cyber-green bg-clip-text text-transparent">
-              Bolt Needs Imiel
+              Bolt.New Needs Imiel
             </span>
           </Link>
 

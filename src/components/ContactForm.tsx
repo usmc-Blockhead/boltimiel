@@ -156,7 +156,7 @@ const ContactForm: React.FC = () => {
 
         <div className="mt-6 p-4 bg-cyber-blue/10 border border-cyber-blue/20 rounded-lg">
           <p className="text-sm text-gray-300 text-center">
-            By submitting this form, you're helping send a professional email to Bolt 
+            By submitting this form, you're helping send a professional email to Bolt.New 
             showcasing Imiel's contributions and potential impact on their team.
           </p>
         </div>
