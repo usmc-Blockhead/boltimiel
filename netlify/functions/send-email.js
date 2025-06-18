@@ -39,7 +39,7 @@ exports.handler = async (event, context) => {
     }
 
     // Create transporter (you'll need to set these environment variables in Netlify)
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: process.env.SMTP_USER, // Your Gmail address
