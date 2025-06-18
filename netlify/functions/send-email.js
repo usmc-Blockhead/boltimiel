@@ -82,7 +82,7 @@ Contact: ${email}`;
 
     const mailOptions = {
       from: `"${fullName}" <${process.env.SMTP_USER}>`,
-      to: 'christa.cooper@calbrightcollege.org',
+      to: 'jaysplaypen@gmail.com',
       subject: 'Imiel for Senior Design Engineer, Already Building the Future of Web Dev',
       text: emailContent,
     };
