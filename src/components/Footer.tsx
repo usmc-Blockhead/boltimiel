@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
         
         <div className="mt-8 pt-8 border-t border-gray-700">
           <p className="text-center text-gray-400 text-sm">
-            &copy; 2024 Bolt.New Needs Imiel. Made with ⚡ for the future of web development.
+            &copy; 2024 Bolt.New Needs Imiel. Made with ⚡ for Imiel by usmc_chick_79
           </p>
         </div>
       </div>
