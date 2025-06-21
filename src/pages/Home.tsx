@@ -151,37 +151,6 @@ const Home: React.FC = () => {
         <div className="absolute bottom-1/3 right-1/5 w-22 h-22 bg-cyber-purple/8 rounded-full animate-float" style={{ animationDelay: '7s' }}></div>
       </section>
 
-      {/* Email Campaign Section */}
-      <section className="py-16 bg-gradient-to-r from-cyber-blue/10 to-cyber-purple/10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-cyber-green to-cyber-blue bg-clip-text text-transparent">
-              Join the Email Campaign
-            </span>
-          </h2>
-          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            Help us get Imiel noticed by the Bolt.New team. Send a professional email showcasing his contributions and potential impact.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <a 
-              href="https://discord.gg/stackblitz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-gradient-to-r from-cyber-purple to-cyber-blue px-8 py-4 rounded-lg font-semibold text-white hover:from-cyber-blue hover:to-cyber-purple transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyber-purple/25 inline-flex items-center space-x-2"
-            >
-              <MessageSquare className="w-5 h-5" />
-              <span>Join Discord</span>
-            </a>
-            <a 
-              href="mailto:imiel.visser@gmail.com"
-              className="group border-2 border-cyber-green px-8 py-4 rounded-lg font-semibold text-cyber-green hover:bg-cyber-green hover:text-dark-900 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-2"
-            >
-              <Mail className="w-5 h-5" />
-              <span>Email Imiel</span>
-            </a>
-          </div>
-        </div>
-      </section>
 
       {/* Achievements Section */}
       <section className="py-20 bg-dark-800/30">
@@ -237,6 +206,38 @@ const Home: React.FC = () => {
           </div>
           
           <ContactForm />
+        </div>
+      </section>
+
+        {/* Email Campaign Section */}
+      <section className="py-16 bg-gradient-to-r from-cyber-blue/10 to-cyber-purple/10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-cyber-green to-cyber-blue bg-clip-text text-transparent">
+              Join the Email Campaign
+            </span>
+          </h2>
+          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+            Help us get Imiel noticed by the Bolt.New team. Send a professional email showcasing his contributions and potential impact.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <a 
+              href="https://discord.gg/stackblitz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-gradient-to-r from-cyber-purple to-cyber-blue px-8 py-4 rounded-lg font-semibold text-white hover:from-cyber-blue hover:to-cyber-purple transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyber-purple/25 inline-flex items-center space-x-2"
+            >
+              <MessageSquare className="w-5 h-5" />
+              <span>Join Discord</span>
+            </a>
+            <a 
+              href="mailto:imiel.visser@gmail.com"
+              className="group border-2 border-cyber-green px-8 py-4 rounded-lg font-semibold text-cyber-green hover:bg-cyber-green hover:text-dark-900 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-2"
+            >
+              <Mail className="w-5 h-5" />
+              <span>Email Imiel</span>
+            </a>
+          </div>
         </div>
       </section>
 
