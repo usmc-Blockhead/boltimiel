@@ -53,12 +53,9 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div id="email-campaign-form" className="max-w-4xl mx-auto space-y-12">
-      {/* Campaign Progress Visualization */}
-      <CampaignProgress />
-      
+    <div className="max-w-4xl mx-auto space-y-12">
       {/* Contact Form */}
-      <div className="max-w-2xl mx-auto">
+      <div id="contact-form" className="max-w-2xl mx-auto">
       <div className="bg-dark-700/50 backdrop-blur-sm p-8 rounded-xl border border-cyber-blue/20">
         <div className="text-center mb-8">
           <h3 className="text-2xl font-bold text-white mb-2">
@@ -168,6 +165,9 @@ const ContactForm: React.FC = () => {
         </div>
       </div>
       </div>
+      
+      {/* Campaign Progress Visualization */}
+      <CampaignProgress />
     </div>
   );
 };

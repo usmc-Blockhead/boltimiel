@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Heart, Share2, Send, Users, Target, TrendingUp, Copy, Check } from 'lucide-react';
+import { Heart, Share2, Send, Users, Target, TrendingUp } from 'lucide-react';
+import ShareModal from './ShareModal';
 
 interface CampaignProgressProps {
   currentEmails?: number;
@@ -11,7 +12,7 @@ const CampaignProgress: React.FC<CampaignProgressProps> = ({
   goalEmails = 500 
 }) => {
   const [animatedCount, setAnimatedCount] = useState(0);
-  const [copied, setCopied] = useState(false);
+  const [showShareModal, setShowShareModal] = useState(false);
   const percentage = Math.round((currentEmails / goalEmails) * 100);
 
   // Animate the counter on mount
@@ -42,35 +43,8 @@ const CampaignProgress: React.FC<CampaignProgressProps> = ({
     return "💪 Building momentum, one email at a time!";
   };
 
-  const handleCopyLink = async () => {
-    try {
-      await navigator.clipboard.writeText('https://imiel2bolt.net');
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error('Failed to copy link');
-    }
-  };
-
-  const shareButtons = [
-    {
-      name: 'Facebook',
-      url: 'https://www.facebook.com/sharer/sharer.php?u=https://imiel2bolt.net/',
-      color: 'hover:border-blue-500 hover:text-blue-500 hover:shadow-blue-500/25'
-    },
-    {
-      name: 'LinkedIn',
-      url: 'https://www.linkedin.com/sharing/share-offsite/?url=https://imiel2bolt.net/',
-      color: 'hover:border-blue-600 hover:text-blue-600 hover:shadow-blue-600/25'
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/intent/tweet?text=BOLT.NEW%20needs%20Imiel%20%E2%80%94%20someone%20who%27s%20already%20pushing%20the%20boundaries%20of%20web%20development%20and%20building%20the%20future%20with%20Bolt.New.&url=https://imiel2bolt.net/',
-      color: 'hover:border-sky-400 hover:text-sky-400 hover:shadow-sky-400/25'
-    }
-  ];
-
   return (
+    <>
     <div className="w-full max-w-4xl mx-auto space-y-8">
       {/* Progress Section */}
       <div className="bg-gradient-to-br from-cyber-purple/20 to-cyber-blue/20 backdrop-blur-sm p-8 rounded-2xl border border-cyber-purple/30">
@@ -178,12 +152,15 @@ const CampaignProgress: React.FC<CampaignProgressProps> = ({
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-          <button className="group bg-gradient-to-r from-cyber-green to-cyber-blue px-8 py-4 rounded-lg font-semibold text-white hover:from-cyber-blue hover:to-cyber-green transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyber-green/25 flex items-center space-x-2">
+          <button 
+            onClick={() => setShowShareModal(true)}
+            className="group bg-gradient-to-r from-cyber-green to-cyber-blue px-8 py-4 rounded-lg font-semibold text-white hover:from-cyber-blue hover:to-cyber-green transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyber-green/25 flex items-center space-x-2"
+          >
             <Share2 className="w-5 h-5" />
             <span>Share This Campaign</span>
           </button>
           <a 
-            href="#email-campaign-form"
+            href="#contact-form"
             className="group border-2 border-cyber-purple px-8 py-4 rounded-lg font-semibold text-cyber-purple hover:bg-cyber-purple hover:text-white transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"
           >
             <Send className="w-5 h-5" />
@@ -191,33 +168,8 @@ const CampaignProgress: React.FC<CampaignProgressProps> = ({
           </a>
         </div>
 
-        {/* Social Share Buttons */}
-        <div className="border-t border-cyber-purple/20 pt-8">
-          <h4 className="text-lg font-semibold text-white mb-4">Share on Social Media</h4>
-          <div className="flex flex-wrap justify-center gap-3">
-            {shareButtons.map((button) => (
-              <a
-                key={button.name}
-                href={button.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`bg-dark-700 border border-gray-600 text-gray-300 px-4 py-2 rounded-lg font-medium text-sm uppercase tracking-wide transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg ${button.color}`}
-              >
-                {button.name}
-              </a>
-            ))}
-            <button
-              onClick={handleCopyLink}
-              className="bg-dark-700 border border-gray-600 text-gray-300 px-4 py-2 rounded-lg font-medium text-sm uppercase tracking-wide transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg hover:border-cyber-purple hover:text-cyber-purple hover:shadow-cyber-purple/25 flex items-center space-x-2"
-            >
-              {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-              <span>{copied ? 'Copied!' : 'Copy Link'}</span>
-            </button>
-          </div>
-        </div>
-
         {/* Community Quote */}
-        <div className="mt-8 p-6 bg-gradient-to-r from-cyber-blue/10 to-cyber-purple/10 rounded-lg border border-cyber-blue/20">
+        <div className="p-6 bg-gradient-to-r from-cyber-blue/10 to-cyber-purple/10 rounded-lg border border-cyber-blue/20">
           <blockquote className="text-lg italic text-gray-300 mb-4">
             "Together, we can show Bolt that Imiel isn't just a contributor – he's family. And family belongs on the team."
           </blockquote>
@@ -225,6 +177,10 @@ const CampaignProgress: React.FC<CampaignProgressProps> = ({
         </div>
       </div>
     </div>
+
+    {/* Share Modal */}
+    <ShareModal isOpen={showShareModal} onClose={() => setShowShareModal(false)} />
+    </>
   );
 };
 
