@@ -8,7 +8,7 @@ interface EmailPreviewProps {
 const EmailPreview: React.FC<EmailPreviewProps> = ({ onClose }) => {
   const [copied, setCopied] = React.useState(false);
 
-  const emailContent = `Subject: Imiel for Senior Design Engineer, Already Building the Future of Web Dev
+  const emailContent = `c
 
 Hi Eric Simons,
 
