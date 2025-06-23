@@ -274,7 +274,7 @@ Sent via BoltNewNeedsImiel.com`;
               <div className="mt-6 p-4 bg-cyber-blue/10 border border-cyber-blue/20 rounded-lg">
                 <p className="text-sm text-gray-300 text-center">
                   <strong className="text-cyber-blue">Note:</strong> The email will open in your default email client. 
-                  You can personalize the message by replacing "[Your Name]" with your actual name before sending.
+                  You can personalize the message by replacing "[Your Name]\" with your actual name before sending.
                 </p>
               </div>
             </div>
