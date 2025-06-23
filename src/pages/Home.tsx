@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Mail, Code, Users, Zap, Send, ChevronRight, Star, MessageSquare, Copy, Check } from 'lucide-react';
-import ContactForm from '../components/ContactForm';
 
 const Home: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -171,13 +170,13 @@ Sent via BoltNewNeedsImiel.com`;
               </a>
               
               <a 
-                href="#contact-form" 
+                href="#email-template"
                 className="group border-2 border-cyber-green px-10 py-5 rounded-lg font-semibold text-cyber-green hover:bg-cyber-green hover:text-dark-900 transition-all duration-300 transform hover:scale-105 text-lg"
               >
                 <span className="flex items-center space-x-2">
                   <Users className="w-5 h-5" />
-                  <span>Join Campaign</span>
-                </span>
+                  <span>View Email Template</span>
+                <span>View Email Template</span>
               </a>
             </div>
           </div>
@@ -195,7 +194,7 @@ Sent via BoltNewNeedsImiel.com`;
       </section>
 
       {/* Email Template Section */}
-      <section className="py-20 bg-dark-800/30">
+      <section id="email-template" className="py-20 bg-dark-800/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -318,24 +317,6 @@ Sent via BoltNewNeedsImiel.com`;
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section id="contact-form" className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-cyber-green to-cyber-blue bg-clip-text text-transparent">
-                Help Bolt.New Discover Imiel
-              </span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Join the campaign and send an email to Bolt.New showcasing why they need Imiel on their team
-            </p>
-          </div>
-          
-          <ContactForm />
         </div>
       </section>
 
