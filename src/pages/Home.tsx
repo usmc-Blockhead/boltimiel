@@ -194,7 +194,7 @@ Sent via BoltNewNeedsImiel.com`;
       </section>
 
       {/* Email Template Section */}
-      <section className="py-20 bg-dark-800/30">
+      <section id="email-template" className="py-20 bg-dark-800/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
