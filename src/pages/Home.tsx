@@ -194,6 +194,93 @@ Sent via BoltNewNeedsImiel.com`;
         <div className="absolute bottom-1/3 right-1/5 w-22 h-22 bg-cyber-purple/8 rounded-full animate-float" style={{ animationDelay: '7s' }}></div>
       </section>
 
+      {/* Email Template Section */}
+      <section className="py-20 bg-dark-800/30">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-cyber-green to-cyber-blue bg-clip-text text-transparent">
+                The Email Template
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Here's the professional email that will be sent to Bolt.New on your behalf
+            </p>
+          </div>
+          
+          <div className="bg-dark-700/50 backdrop-blur-sm rounded-xl border border-cyber-blue/20 overflow-hidden">
+            {/* Email Header */}
+            <div className="bg-gradient-to-r from-cyber-blue/20 to-cyber-purple/20 p-6 border-b border-cyber-blue/20">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center space-x-3">
+                  <div className="p-2 bg-gradient-to-r from-cyber-blue to-cyber-purple rounded-lg">
+                    <Mail className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Email to Bolt.New</h3>
+                    <p className="text-sm text-gray-400">Ready to send</p>
+                  </div>
+                </div>
+                <button
+                  onClick={handleCopyEmail}
+                  className="group flex items-center space-x-2 px-4 py-2 bg-cyber-green/20 hover:bg-cyber-green/30 text-cyber-green rounded-lg transition-colors duration-300"
+                >
+                  {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                  <span className="text-sm font-medium">
+                    {copied ? 'Copied!' : 'Copy Email'}
+                  </span>
+                </button>
+              </div>
+              
+              <div className="space-y-2 text-sm">
+                <div className="flex">
+                  <span className="text-gray-400 w-16">To:</span>
+                  <span className="text-cyber-blue font-medium">{recipient}</span>
+                </div>
+                <div className="flex">
+                  <span className="text-gray-400 w-16">Subject:</span>
+                  <span className="text-white">{subject}</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Email Content */}
+            <div className="p-6">
+              <div className="bg-dark-600/50 p-6 rounded-lg border border-cyber-blue/10">
+                <pre className="text-gray-300 leading-relaxed whitespace-pre-wrap font-sans text-sm">
+                  {emailContent}
+                </pre>
+              </div>
+              
+              <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href={mailtoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-gradient-to-r from-cyber-green to-cyber-blue px-8 py-4 rounded-lg font-semibold text-white hover:from-cyber-blue hover:to-cyber-green transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyber-green/25 flex items-center justify-center space-x-2"
+                >
+                  <Send className="w-5 h-5" />
+                  <span>Send This Email</span>
+                </a>
+                <button
+                  onClick={handleCopyEmail}
+                  className="group border-2 border-cyber-purple px-8 py-4 rounded-lg font-semibold text-cyber-purple hover:bg-cyber-purple hover:text-white transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
+                >
+                  {copied ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
+                  <span>{copied ? 'Copied!' : 'Copy to Clipboard'}</span>
+                </button>
+              </div>
+              
+              <div className="mt-6 p-4 bg-cyber-blue/10 border border-cyber-blue/20 rounded-lg">
+                <p className="text-sm text-gray-300 text-center">
+                  <strong className="text-cyber-blue">Note:</strong> The email will open in your default email client. 
+                  You can personalize the message by replacing "[Your Name]" with your actual name before sending.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Achievements Section */}
       <section className="py-20 bg-dark-800/30">
