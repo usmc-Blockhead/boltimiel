@@ -283,11 +283,6 @@ Sent via BoltNewNeedsImiel.com`;
           </div>
         </div>
       </section>
-
-      {/* Email Preview Modal */}
-      {showEmailPreview && (
-        <EmailPreview onClose={() => setShowEmailPreview(false)} />
-      )}
       </div>
     </>
   );
