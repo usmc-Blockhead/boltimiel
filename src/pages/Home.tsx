@@ -1,10 +1,51 @@
 import React, { useState } from 'react';
-import { Mail, Code, Users, Zap, Send, ChevronRight, Star, MessageSquare } from 'lucide-react';
-import EmailPreview from '../components/EmailPreview';
+import { Mail, Code, Users, Zap, Send, ChevronRight, Star, MessageSquare, Copy, Check } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
 
 const Home: React.FC = () => {
-  const [showEmailPreview, setShowEmailPreview] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const emailContent = `Hi Eric Simons,
+
+I'm reaching out to introduce someone who's already pushing the boundaries of web development in ways that deeply align with StackBlitz's mission: Imiel.
+
+Imiel is a rare breed of engineer-designer hybrid with a deep understanding of front-end architecture, UX design, and the real-world pain points developers face, especially in browser-based dev environments like Bolt.New. Without any official access to the codebase, he's already done what many full teams haven't:
+
+Created a popular extension that improves core UX:
+• Manual sidebar toggle to eliminate distracting UI behavior
+• Auto-generated task prompts for faster iteration
+• Smart analysis and rewriting of the bolt.ignore file based on project contents
+• A cleaner, more accessible PRD generator for real-world workflows
+
+Founded bolt.army to connect and empower devs building around Bolt.New, essentially creating an organic developer community from the ground up.
+
+He's already designing, engineering, and shipping the kind of user-centric improvements StackBlitz values, from the outside. With access to the actual platform and a team to collaborate with, he'd be an unstoppable force.
+
+Imiel lives and breathes this work. He obsesses over interface clarity, performance, accessibility, and dev experience. He's a natural bridge between design and code, and already leads by example in the open dev community.
+
+He's not just ready for a role like this; he's already doing it.
+
+If you'd like to connect with him directly, I'm happy to facilitate an introduction. This is one of those hires that could quietly level up the entire platform.
+
+Best,
+[Your Name]
+
+---
+Sent via BoltNewNeedsImiel.com`;
+
+  const subject = "Imiel for Senior Design Engineer, Already Building the Future of Web Dev";
+  const recipient = "eric.simons@bolt.new";
+  const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailContent)}`;
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(`Subject: ${subject}\n\n${emailContent}`);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy email content');
+    }
+  };
 
   const achievements = [
     {
@@ -116,24 +157,26 @@ const Home: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <button
-                onClick={() => setShowEmailPreview(true)}
+              <a
+                href={mailtoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group bg-gradient-to-r from-cyber-blue to-cyber-purple px-10 py-5 rounded-lg font-semibold text-white hover:from-cyber-purple hover:to-cyber-blue transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyber-blue/25 text-lg"
               >
                 <span className="flex items-center space-x-2">
                   <Mail className="w-5 h-5" />
-                  <span>View Email Template</span>
+                  <span>Send Email Now</span>
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
-              </button>
+              </a>
               
               <a 
                 href="#contact-form" 
                 className="group border-2 border-cyber-green px-10 py-5 rounded-lg font-semibold text-cyber-green hover:bg-cyber-green hover:text-dark-900 transition-all duration-300 transform hover:scale-105 text-lg"
               >
                 <span className="flex items-center space-x-2">
-                  <Send className="w-5 h-5" />
-                  <span>Send Email Now</span>
+                  <Users className="w-5 h-5" />
+                  <span>Join Campaign</span>
                 </span>
               </a>
             </div>
