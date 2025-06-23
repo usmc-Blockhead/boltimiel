@@ -176,7 +176,7 @@ Sent via BoltNewNeedsImiel.com`;
                 <span className="flex items-center space-x-2">
                   <Users className="w-5 h-5" />
                   <span>View Email Template</span>
-                <span>View Email Template</span>
+                </span>
               </a>
             </div>
           </div>
@@ -194,7 +194,7 @@ Sent via BoltNewNeedsImiel.com`;
       </section>
 
       {/* Email Template Section */}
-      <section id="email-template" className="py-20 bg-dark-800/30">
+      <section className="py-20 bg-dark-800/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -273,7 +273,7 @@ Sent via BoltNewNeedsImiel.com`;
               <div className="mt-6 p-4 bg-cyber-blue/10 border border-cyber-blue/20 rounded-lg">
                 <p className="text-sm text-gray-300 text-center">
                   <strong className="text-cyber-blue">Note:</strong> The email will open in your default email client. 
-                  You can personalize the message by replacing "[Your Name]\" with your actual name before sending.
+                  You can personalize the message by replacing "[Your Name]" with your actual name before sending.
                 </p>
               </div>
             </div>
