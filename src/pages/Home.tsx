@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Mail, Code, Users, Zap, Send, ChevronRight, Star, MessageSquare, Copy, Check } from 'lucide-react';
+import EmailModal from '../components/EmailModal';
 
 const Home: React.FC = () => {
   const [copied, setCopied] = useState(false);
+  const [showEmailModal, setShowEmailModal] = useState(false);
 
   const emailContent = `Hi Eric Simons,
 
@@ -34,7 +36,6 @@ Sent via BoltNewNeedsImiel.com`;
 
   const subject = "Imiel for Senior Design Engineer, Already Building the Future of Web Dev";
   const recipient = "eric.simons@bolt.new";
-  const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailContent)}`;
 
   const handleCopyEmail = async () => {
     try {
@@ -44,6 +45,10 @@ Sent via BoltNewNeedsImiel.com`;
     } catch (err) {
       console.error('Failed to copy email content');
     }
+  };
+
+  const handleOpenEmailModal = () => {
+    setShowEmailModal(true);
   };
 
   const achievements = [
@@ -156,10 +161,8 @@ Sent via BoltNewNeedsImiel.com`;
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <a
-                href={mailtoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={handleOpenEmailModal}
                 className="group bg-gradient-to-r from-cyber-blue to-cyber-purple px-10 py-5 rounded-lg font-semibold text-white hover:from-cyber-purple hover:to-cyber-blue transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyber-blue/25 text-lg"
               >
                 <span className="flex items-center space-x-2">
@@ -167,7 +170,7 @@ Sent via BoltNewNeedsImiel.com`;
                   <span>Send Email Now</span>
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
-              </a>
+              </button>
               
               <a 
                 href="#email-template"
@@ -252,15 +255,13 @@ Sent via BoltNewNeedsImiel.com`;
               </div>
               
               <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href={mailtoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={handleOpenEmailModal}
                   className="group bg-gradient-to-r from-cyber-blue to-cyber-purple px-8 py-4 rounded-lg font-semibold text-white hover:from-cyber-purple hover:to-cyber-blue transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyber-blue/25 flex items-center justify-center space-x-2"
                 >
                   <Send className="w-5 h-5" />
                   <span>Send This Email</span>
-                </a>
+                </button>
                 <button
                   onClick={handleCopyEmail}
                   className="group border-2 border-cyber-purple px-8 py-4 rounded-lg font-semibold text-cyber-purple hover:bg-cyber-purple hover:text-white transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
@@ -352,6 +353,15 @@ Sent via BoltNewNeedsImiel.com`;
         </div>
       </section>
       </div>
+
+      {/* Email Modal */}
+      <EmailModal
+        isOpen={showEmailModal}
+        onClose={() => setShowEmailModal(false)}
+        initialEmailContent={emailContent}
+        subject={subject}
+        recipient={recipient}
+      />
     </>
   );
 };
