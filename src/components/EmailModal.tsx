@@ -75,8 +75,28 @@ const EmailModal: React.FC<EmailModalProps> = ({
     const finalEmailContent = emailContent;
     const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(finalEmailContent)}`;
     
-    // Open email client
-    window.open(mailtoUrl, '_blank');
+    // Try multiple methods to open email client
+    try {
+      // Method 1: Direct window.location (most reliable)
+      window.location.href = mailtoUrl;
+    } catch (error) {
+      try {
+        // Method 2: Create and click a temporary link
+        const link = document.createElement('a');
+        link.href = mailtoUrl;
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } catch (linkError) {
+        // Method 3: Fallback - copy to clipboard and show instructions
+        navigator.clipboard.writeText(`To: ${recipient}\nSubject: ${subject}\n\n${finalEmailContent}`).then(() => {
+          alert('Email content copied to clipboard. Please paste it into your email client.');
+        }).catch(() => {
+          alert(`Please copy this email manually:\n\nTo: ${recipient}\nSubject: ${subject}\n\n${finalEmailContent}`);
+        });
+      }
+    }
     
     // Close modal after sending
     onClose();
