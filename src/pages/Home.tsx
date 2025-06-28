@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Mail, Code, Users, Zap, Send, ChevronRight, Star, MessageSquare, Copy, Check } from 'lucide-react';
+import { Mail, Code, Users, Zap, Send, ChevronRight, Star, MessageSquare, Copy, Check, Share2 } from 'lucide-react';
 import EmailModal from '../components/EmailModal';
+import ShareModal from '../components/ShareModal';
 
 const Home: React.FC = () => {
   const [copied, setCopied] = useState(false);
   const [showEmailModal, setShowEmailModal] = useState(false);
+  const [showShareModal, setShowShareModal] = useState(false);
 
   const emailContent = `Hi Eric Simons,
 
@@ -321,6 +323,69 @@ Sent via BoltNewNeedsImiel.com`;
         </div>
       </section>
 
+      {/* Social Media Share Section */}
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-cyber-purple to-cyber-pink bg-clip-text text-transparent">
+              Spread the Word
+            </span>
+          </h2>
+          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+            Help amplify Imiel's voice by sharing this campaign with your network. 
+            Every share brings us closer to getting Bolt.New's attention.
+          </p>
+          
+          <div className="bg-gradient-to-br from-cyber-purple/20 to-cyber-blue/20 backdrop-blur-sm p-8 rounded-2xl border border-cyber-purple/30">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-dark-700/30 backdrop-blur-sm p-6 rounded-xl border border-cyber-blue/20 hover:border-cyber-blue/50 transition-all duration-300">
+                <div className="p-3 bg-gradient-to-br from-cyber-blue to-cyber-purple rounded-lg w-fit mx-auto mb-4">
+                  <Share2 className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">Social Media</h3>
+                <p className="text-gray-300 text-sm">
+                  Share on Twitter, LinkedIn, Facebook and more
+                </p>
+              </div>
+
+              <div className="bg-dark-700/30 backdrop-blur-sm p-6 rounded-xl border border-cyber-green/20 hover:border-cyber-green/50 transition-all duration-300">
+                <div className="p-3 bg-gradient-to-br from-cyber-green to-cyber-blue rounded-lg w-fit mx-auto mb-4">
+                  <Copy className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">Direct Link</h3>
+                <p className="text-gray-300 text-sm">
+                  Copy the campaign URL to share anywhere
+                </p>
+              </div>
+
+              <div className="bg-dark-700/30 backdrop-blur-sm p-6 rounded-xl border border-cyber-purple/20 hover:border-cyber-purple/50 transition-all duration-300">
+                <div className="p-3 bg-gradient-to-br from-cyber-purple to-cyber-pink rounded-lg w-fit mx-auto mb-4">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">Community</h3>
+                <p className="text-gray-300 text-sm">
+                  Reach developers who know Imiel's work
+                </p>
+              </div>
+            </div>
+
+            <button 
+              onClick={() => setShowShareModal(true)}
+              className="group bg-gradient-to-r from-cyber-green to-cyber-blue px-8 py-4 rounded-lg font-semibold text-white hover:from-cyber-blue hover:to-cyber-green transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyber-green/25 flex items-center space-x-2 mx-auto"
+            >
+              <Share2 className="w-5 h-5" />
+              <span>Share This Campaign</span>
+            </button>
+
+            <div className="mt-6 p-4 bg-gradient-to-r from-cyber-green/10 to-cyber-blue/10 rounded-lg border border-cyber-green/20">
+              <p className="text-cyber-green font-medium text-center">
+                🚀 Every share counts! Help us show Bolt.New the community support behind Imiel.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
         {/* Email Campaign Section */}
       <section className="py-16 bg-gradient-to-r from-cyber-blue/10 to-cyber-purple/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -362,6 +427,9 @@ Sent via BoltNewNeedsImiel.com`;
         subject={subject}
         recipient={recipient}
       />
+
+      {/* Share Modal */}
+      <ShareModal isOpen={showShareModal} onClose={() => setShowShareModal(false)} />
     </>
   );
 };
