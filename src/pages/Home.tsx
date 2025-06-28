@@ -2,12 +2,39 @@ import React, { useState } from 'react';
 import { Mail, Code, Users, Zap, Send, ChevronRight, Star, MessageSquare, Copy, Check, Share2 } from 'lucide-react';
 import EmailModal from '../components/EmailModal';
 import ShareModal from '../components/ShareModal';
+import CampaignProgress from '../components/CampaignProgress';
 
 const Home: React.FC = () => {
   const [copied, setCopied] = useState(false);
   const [showEmailModal, setShowEmailModal] = useState(false);
   const [showShareModal, setShowShareModal] = useState(false);
+  const [emailCount, setEmailCount] = useState(() => {
+    // Load from localStorage or default to 127
+    const saved = localStorage.getItem('campaign-email-count');
+    return saved ? parseInt(saved, 10) : 127;
+  });
+  const [shareCount, setShareCount] = useState(() => {
+    // Load from localStorage or default to 0
+    const saved = localStorage.getItem('campaign-share-count');
+    return saved ? parseInt(saved, 10) : 0;
+  });
 
+  // Function to increment email count
+  const incrementEmailCount = () => {
+    const newCount = emailCount + 1;
+    setEmailCount(newCount);
+    localStorage.setItem('campaign-email-count', newCount.toString());
+  };
+
+  // Function to increment share count
+  const incrementShareCount = () => {
+    const newCount = shareCount + 1;
+    setShareCount(newCount);
+    localStorage.setItem('campaign-share-count', newCount.toString());
+  };
+
+  // Total supporters count
+  const totalSupporters = emailCount + shareCount;
   const emailContent = `Hi Eric Simons,
 
 I'm reaching out to introduce someone who's already pushing the boundaries of web development in ways that deeply align with StackBlitz's mission: Imiel.
@@ -386,6 +413,18 @@ Sent via BoltNewNeedsImiel.com`;
         </div>
       </section>
 
+      {/* Campaign Progress Section */}
+      <section className="py-20 bg-dark-800/30">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CampaignProgress 
+            currentEmails={totalSupporters} 
+            goalEmails={500}
+            emailCount={emailCount}
+            shareCount={shareCount}
+          />
+        </div>
+      </section>
+
         {/* Email Campaign Section */}
       <section className="py-16 bg-gradient-to-r from-cyber-blue/10 to-cyber-purple/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -426,10 +465,15 @@ Sent via BoltNewNeedsImiel.com`;
         initialEmailContent={emailContent}
         subject={subject}
         recipient={recipient}
+        onEmailSent={incrementEmailCount}
       />
 
       {/* Share Modal */}
-      <ShareModal isOpen={showShareModal} onClose={() => setShowShareModal(false)} />
+      <ShareModal 
+        isOpen={showShareModal} 
+        onClose={() => setShowShareModal(false)} 
+        onShare={incrementShareCount}
+      />
     </>
   );
 };

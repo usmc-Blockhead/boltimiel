@@ -7,6 +7,7 @@ interface EmailModalProps {
   initialEmailContent: string;
   subject: string;
   recipient: string;
+  onEmailSent?: () => void;
 }
 
 const EmailModal: React.FC<EmailModalProps> = ({ 
@@ -14,7 +15,8 @@ const EmailModal: React.FC<EmailModalProps> = ({
   onClose, 
   initialEmailContent, 
   subject, 
-  recipient 
+  recipient,
+  onEmailSent
 }) => {
   const [userName, setUserName] = useState('');
   const [emailContent, setEmailContent] = useState(initialEmailContent);
@@ -85,6 +87,11 @@ const EmailModal: React.FC<EmailModalProps> = ({
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    
+    // Increment email count
+    if (onEmailSent) {
+      onEmailSent();
+    }
     
     // Close modal after sending
     onClose();

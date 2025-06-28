@@ -4,9 +4,10 @@ import { X, Share2, Copy, Check, Facebook, Linkedin, Twitter, MessageSquare } fr
 interface ShareModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onShare?: () => void;
 }
 
-const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose }) => {
+const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, onShare }) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopyLink = async () => {
@@ -14,11 +15,22 @@ const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose }) => {
       await navigator.clipboard.writeText('https://imiel2bolt.net');
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+      // Increment share count when link is copied
+      if (onShare) {
+        onShare();
+      }
     } catch (err) {
       console.error('Failed to copy link');
     }
   };
 
+  const handleSocialShare = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+    // Increment share count when social media is used
+    if (onShare) {
+      onShare();
+    }
+  };
   const shareButtons = [
     {
       name: 'Facebook',
@@ -91,11 +103,9 @@ const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose }) => {
               <h3 className="text-lg font-semibold text-white mb-4">Share on Social Media</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {shareButtons.map((button) => (
-                  <a
+                  <button
                     key={button.name}
-                    href={button.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    onClick={() => handleSocialShare(button.url)}
                     className={`group bg-dark-700/50 border border-gray-600 text-gray-300 p-4 rounded-lg font-medium transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg ${button.color} ${button.bgColor} flex items-center space-x-3`}
                   >
                     <div className="flex-shrink-0">
@@ -105,7 +115,7 @@ const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose }) => {
                       <div className="font-semibold">Share on {button.name}</div>
                       <div className="text-xs text-gray-400">Spread the word to your network</div>
                     </div>
-                  </a>
+                  </button>
                 ))}
               </div>
             </div>

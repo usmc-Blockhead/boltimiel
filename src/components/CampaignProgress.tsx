@@ -5,11 +5,15 @@ import ShareModal from './ShareModal';
 interface CampaignProgressProps {
   currentEmails?: number;
   goalEmails?: number;
+  emailCount?: number;
+  shareCount?: number;
 }
 
 const CampaignProgress: React.FC<CampaignProgressProps> = ({ 
   currentEmails = 127, 
-  goalEmails = 500 
+  goalEmails = 500,
+  emailCount = 0,
+  shareCount = 0
 }) => {
   const [animatedCount, setAnimatedCount] = useState(0);
   const [showShareModal, setShowShareModal] = useState(false);
@@ -77,19 +81,19 @@ const CampaignProgress: React.FC<CampaignProgressProps> = ({
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <div className="bg-dark-700/50 p-4 rounded-lg border border-cyber-blue/20 text-center">
-            <Users className="w-6 h-6 text-cyber-blue mx-auto mb-2" />
-            <div className="text-2xl font-bold text-white">{animatedCount}</div>
-            <div className="text-sm text-gray-300">Supporters</div>
+            <Send className="w-6 h-6 text-cyber-blue mx-auto mb-2" />
+            <div className="text-2xl font-bold text-white">{emailCount}</div>
+            <div className="text-sm text-gray-300">Emails Sent</div>
           </div>
           <div className="bg-dark-700/50 p-4 rounded-lg border border-cyber-green/20 text-center">
-            <Target className="w-6 h-6 text-cyber-green mx-auto mb-2" />
-            <div className="text-2xl font-bold text-white">{goalEmails - currentEmails}</div>
-            <div className="text-sm text-gray-300">To Goal</div>
+            <Share2 className="w-6 h-6 text-cyber-green mx-auto mb-2" />
+            <div className="text-2xl font-bold text-white">{shareCount}</div>
+            <div className="text-sm text-gray-300">Shares</div>
           </div>
           <div className="bg-dark-700/50 p-4 rounded-lg border border-cyber-purple/20 text-center">
-            <TrendingUp className="w-6 h-6 text-cyber-purple mx-auto mb-2" />
-            <div className="text-2xl font-bold text-white">{percentage}%</div>
-            <div className="text-sm text-gray-300">Complete</div>
+            <Users className="w-6 h-6 text-cyber-purple mx-auto mb-2" />
+            <div className="text-2xl font-bold text-white">{animatedCount}</div>
+            <div className="text-sm text-gray-300">Total Supporters</div>
           </div>
         </div>
 
